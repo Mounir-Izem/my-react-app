@@ -1,12 +1,21 @@
-export default function PokemonCard({pokemon}) {
+interface PokeType {
+    pokemon: {
+    name: string;
+    imgSrc?: string;
+    }
+};
 
-    console.log(pokemon);
+
+
+export default function PokemonCard({pokemon}: PokeType) {
+
     return (
         <figure>
             {
                 pokemon.imgSrc && pokemon.name ?(
                     <div>
-                        <img src ={pokemon.imgSrc} alt={"Photo d'un pokémon"}/> <p>{pokemon.name}</p>
+                        <img src ={pokemon.imgSrc} alt={"Photo d'un pokémon"}/> 
+                        <p>{pokemon.name}</p>
                     </div> 
                 ) : (
                     <p>???</p>
